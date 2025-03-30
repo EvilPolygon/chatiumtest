@@ -83,8 +83,8 @@ const updateElo = app.apiCall('/update', async(ctx,req) => {
 
   const predictedElo = (Ra, Rb) => 1/(1+(10*((Rb-Ra)/400)))
 
-  const winPred = predictedElo(winnerElo, looserElo);
-  const loosPred = predictedElo(looserElo, winnerElo);
+  const winPred = predictedElo(looserElo, winnerElo);
+  const loosPred = predictedElo(winnerElo, looserElo);
 
   const k = 20;
 
